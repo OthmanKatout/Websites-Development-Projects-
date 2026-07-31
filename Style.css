@@ -13,10 +13,6 @@ border-radius: 6px;
 font-family: Tajawal;
 color: #f0f8ff;
 }
-#breif{
-    font-family: Tajawal;
-
-}
 #txt{
     display: flex;
     flex: 1;
@@ -30,3 +26,51 @@ color: #f0f8ff;
     padding: 35px;
     gap: 15px;
 }
+#breif{
+    font-family: Tajawal;
+    font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: auto;
+    direction: rtl;
+    background-color: #f0f8ff;
+    max-width: 900px;
+    border: #000b76 solid 4.5px;
+}
+#who_is_that{
+    font-size: x-large;
+    font-family: Tajawal;
+    text-align: center;
+}
+#brief_content{
+    text-align: justify;
+    padding-left:20px ;
+    padding-right:20px;
+}
+.emoji::after{
+content: "🤷‍♂️";
+margin-right: 10px;
+}
+#Tawjehi{
+        border: #000b76 solid 4.5px;
+        background-color: #f0f8ff;
+
+}
+#flex_Taw{
+    display: flex;
+    flex-direction: row-reverse;
+}
+#flex_Taw2{
+    display: flex;
+    flex: 1;
+    font-size: x-large;
+    font-family: Tajawal;
+    text-align: justify;
+    padding-left:20px ;
+    padding-right:20px;
+    margin-top: -0px;
+    justify-content: right;
+}
+
+
