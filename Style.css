@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
+body{
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
 #FirstImg{
 height: 380px;
 width: auto;
@@ -52,25 +59,93 @@ color: #f0f8ff;
 content: "🤷‍♂️";
 margin-right: 10px;
 }
-#Tawjehi{
-        border: #000b76 solid 4.5px;
-        background-color: #f0f8ff;
+
+#container{
+
+background-color:#f0f8ff ;
+border: #000b76 solid 4.5px;
+direction: rtl;
+font-family: Tajawal;
+font-size: x-large;
+overflow: hidden;
+max-width: 1050px;
+margin-left: auto;
+margin-right: auto;
 
 }
-#flex_Taw{
-    display: flex;
-    flex-direction: row-reverse;
-}
-#flex_Taw2{
-    display: flex;
-    flex: 1;
+#tittle_container{
+    text-align: center;
     font-size: x-large;
-    font-family: Tajawal;
-    text-align: justify;
-    padding-left:20px ;
-    padding-right:20px;
-    margin-top: -0px;
-    justify-content: right;
+}
+#second_container{
+    
+padding-left: 20px;
+padding-right: 20px;
+line-height: 1.35;
+text-align: justify;
+text-justify: inter-word;
 }
 
+#first_container{
+    float: right;
+    height: 350px;
+    width: auto;
+    border-bottom: #000b76 solid;
+    border-left: #000b76 solid;
+    margin-top: -1px;
+    margin-left: 10px;
+}
+.emoji2::after{
+    content: "🤲";
+margin-right: 10px;
+}
+#first_container2{
+    float: right;
+    height: 350px;
+    width: auto;
+    border-bottom: #000b76 solid;
+    border-left: #000b76 solid;
+    margin-top: -1px;
+    margin-left: 10px;
+}
+#container2{
+background-color:#f0f8ff ;
+border: #000b76 solid 4.5px;
+direction: rtl;
+font-family: Tajawal;
+font-size: x-large;
+overflow: hidden;
+max-width: 1050px;
+margin-left: auto;
+margin-right: auto;
+}
 
+.emoji3::after{
+    content: "✨";
+margin-right: 10px;
+}
+#footer{
+    direction: rtl;
+    font-family: Tajawal;
+    background-color: #000b76;
+    color: #f0f8ff;
+    margin-top: -5px;
+    width: 100%;
+    display: block;
+}
+a:hover{
+    color: rgb(228, 144, 144);
+    font-size: small;
+}
+.URL{
+    font-family: sans-serif;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #f0f8ff;
+}
+
+.Wave{
+    width: 100%;
+    height: auto;
+    display: block;
+}
