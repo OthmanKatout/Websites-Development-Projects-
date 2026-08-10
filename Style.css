@@ -1,0 +1,20 @@
+#Main_Box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    width: 97vw;
+}
+
+
+#Main_Calc{
+
+    background-color: darkblue;
+    width: 550px;
+    height: 600px;
+    background-color: #ffffff;
+    border: 3px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    
+}
