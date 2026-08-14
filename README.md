@@ -55,7 +55,7 @@ As I continue learning web development, I may improve this project by adding:
 
 **Othman Katout**
 
-Computer Engineering Student | Programmer | Problem Solver
+Computer Engineering Student | Programmer 
 
 This project represents one of my first steps into **Web Development**, and I hope to look back at it in the future and see how much I've improved.
 
