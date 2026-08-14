@@ -60,9 +60,9 @@ font-weight: 700;
     font-weight: bold;
     border: solid 1px #1C1C1E;
     border-radius: 5px;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .eq{
     font-weight: bold;
@@ -119,4 +119,28 @@ border-radius: 5px;
 .main:hover{
     background-color: #e08b0b;
 }
+
+
+
+.button:active{
+    transform: scale(0.92);
+    
+}
+.AC:active{
+    transform: scale(0.92);
+}
+.op:active{
+    transform: scale(0.92);
+}
+.delete:active{
+    transform: scale(0.92);
+}
+.main:active{
+    transform: scale(0.92);
+}
+.eq:active{
+ transform: scale(0.92);
+}
+
+
 
