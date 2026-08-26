@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    overflow: hidden;
+}
+
+.Box{
+
+height: 550px;
+width: 500px;
+min-width: 400px;
+min-height: 500px;
+
+}
+
+#left{
+    margin-left: 20px;
+    margin-right: 50px;
+    background-color:#020281;
+    border-radius: 15px;
+    text-align: center;
+    
+}
+
+#right{
+    margin-right: 20px;
+    background-color: #2083c1;
+    border-radius: 15px;
+    text-align: center;
+}
+#Title_Text{
+    padding: 20px;
+    font-size: x-large;
+    font-family: Tajawal;
+    color:rgb(255, 255, 255)
+}
+
+
