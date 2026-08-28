@@ -1,0 +1,1 @@
+1) For the 2 Boxes i made, is it better to make them as overview: hidden, or let them shrink (width get smaller) ?? 

@@ -41,5 +41,39 @@ min-height: 500px;
     font-family: Tajawal;
     color:rgb(255, 255, 255)
 }
-
+#icons{
+    font-size: 150%;
+    display: flex;
+    justify-content: right;
+    margin-right: 15px;
+}
+.trash{
+    font-size: 160%;
+    background-color: #020281;
+    border: #020281;
+    color:white
+}
+.add{
+    font-size: 180%;
+    background-color: #020281;
+    border: #020281;
+    color:white;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+.add:hover{
+    color:rgb(180, 180, 180)
+}
+.trash:hover{
+   color:rgb(180, 180, 180)
+}
+.trash2{
+    font-size: 160%;
+    background-color: #2083c1;
+    border: #2083c1;
+    color:white
+}
+.trash2:hover{
+    color:rgb(180, 180, 180)
+}
 
