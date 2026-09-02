@@ -30,7 +30,8 @@ min-height: 500px;
 }
 
 #right{
-    margin-right: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
     background-color: #2083c1;
     border-radius: 15px;
     text-align: center;
@@ -81,6 +82,18 @@ min-height: 500px;
     justify-content: left;
     text-align: left;
     margin: 10px;
+    overflow-y: auto;
+    max-height: 400px;
+    width: 102%;
+
+}
+#Second_List{
+    justify-content: left;
+    text-align: left;
+    margin: 10px;
+    overflow-y: auto;
+    max-height: 400px;
+    width: 102%;
 }
 .Checkit{
 width: 16px;
@@ -91,8 +104,8 @@ color: rgb(180, 180, 180);
     font-size: 140%;
     color:white;   
     font-family: 'Nunito', sans-serif;
-    max-width: 100px;
     overflow-wrap: break-word;
+    overflow: hidden;
 }
 .Task{
     display: flex;
@@ -103,6 +116,8 @@ color: rgb(180, 180, 180);
     background-color:rgb(226, 43, 43);
     border: solid black;
     width: 30px;
+    flex-shrink: 0;
+    margin-right: 25px;
 }
 .deletetask:hover{
     font-size: 100%;
@@ -112,6 +127,7 @@ color: rgb(180, 180, 180);
     background-color:rgb(57, 187, 74);
     border: solid black;
     width: 30px;
+    flex-shrink: 0;
 }
 .updateName:hover{
     font-size: 85%;
