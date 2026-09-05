@@ -1,5 +1,6 @@
 
-const Tasks = [];
+const Tasks1 = [];
+const Tasks2 = [];
 var cnt = 0;
 function Task (Name , done , N_O){
 
@@ -20,6 +21,7 @@ var givemename = `<div id = "todeletelater">
 <span id = "popup_text">
 <input type = "text" id = "input_text">
 <button id = "Confirm">✓</button>
+<button id = "dConfirm">X</button>
 </span>
 </div>`;
 
@@ -28,6 +30,14 @@ TaskList.insertAdjacentHTML('afterbegin' , givemename);
 const ConfirmName = document.querySelector("#Confirm");
 ConfirmName.addEventListener('click' , AddTask);
 
+const dConfirmName = document.querySelector("#dConfirm");
+dConfirmName.addEventListener('click' , deletepop);
+
+}
+
+function deletepop(){
+const eraseit = document.querySelector("#todeletelater");
+eraseit.remove();
 }
 
 function AddTask(){
@@ -36,13 +46,13 @@ function AddTask(){
     const strtext = text.value.slice(0 , 27);
     const eraseit = document.querySelector("#todeletelater");
     eraseit.remove();
-    Tasks.push(new Task(strtext, false , cnt ++));
+    Tasks1.push(new Task(strtext, false , cnt ));
     // call the function that render the new additions
-    
+       
     TaskList.innerHTML +=
      `<div class = "Task" id = "task${cnt}">
     <div>
-    <input type = "checkbox" class = "Checkit"><label class = "Label">${strtext}</label>
+    <input type = "checkbox" class = "Checkit${cnt}"><label class = "Label">${strtext}</label>
     </div>
     <div>
     <span><button class = "updateName">🛠</button></span>
@@ -50,9 +60,106 @@ function AddTask(){
     </div>
     </div>
     <br><br>`;
+    const str = ".Checkit" + cnt;
+    const checkbox = document.querySelector(str);
+    checkbox.addEventListener('change' , toggleit);
+    cnt ++; 
 
 }
 
+function toggleit (event){
+
+
+
+const num = Number(event.target.className.slice(7 , event.target.className.length));
+const str = "#task" + num;
+
+
+if(event.target.checked){
+
+for(let i = 0 ; i < Tasks1.length ; i ++){
+    if(Tasks1[i].N_O == num){
+    Tasks1[i].done = true; 
+    Tasks2.push(new Task (Tasks1[i].Name , Tasks1[i].done , Tasks1[i].N_O));
+    const Second_List = document.querySelector("#Second_List");
+    Second_List.innerHTML += `<div class = "Task" id = "task${num}">
+    <div>
+    <input type = "checkbox" class = "Checkit${num}"><label class = "Label">${Tasks1[i].Name}</label>
+    </div>
+    <div>
+    <span><button class = "updateName">🛠</button></span>
+    <span><button class = "deletetask">X</button></span>
+    </div>
+    </div>
+    <br><br>`;
+    Tasks1.splice(i , 1);
+    const str = "task" + num;
+    const why = document.querySelector(str);
+    why.addEventListener('change' , toggleit);
+    }
+}
+
+}
+else{
+
+for(let i = 0 ; i < Tasks2.length ; i ++){
+
+    if(Tasks2[i].N_O == num){
+    Tasks2[i].done = false; 
+    Tasks1.push(new Task (Tasks2[i].Name , Tasks2[i].done , Tasks2[i].N_O));
+    const First_List = document.querySelector("#First_List");
+    First_List.innerHTML += `<div class = "Task" id = "task${num}">
+    <div>
+    <input type = "checkbox" class = "Checkit${num}"><label class = "Label">${Tasks2[i].Name}</label>
+    </div>
+    <div>
+    <span><button class = "updateName">🛠</button></span>
+    <span><button class = "deletetask">X</button></span>
+    </div>
+    </div>
+    <br><br>`;
+    Tasks2.splice(i , 1);
+    const str = "task" + num;
+    const why = document.querySelector(str);
+    why.addEventListener('change' , toggleit);
+    }
+}
+
+}
+
+
+const dl = document.querySelector(str);
+dl.remove();
+
+
+}
+
+function deleteAll (){
+
+for(let i = Tasks1.length - 1 ;i >= 0 ;i --){
+    const idname = "#task" + Tasks1[i].N_O;
+    const curr = document.querySelector(idname)
+    curr.remove();
+    Tasks1.pop();
+}
+
+}
+
+function deleteAll2 (){
+
+for(let i = Tasks2.length - 1 ;i >= 0 ;i --){
+    const idname = "#task" + Tasks2[i].N_O;
+    const curr = document.querySelector(idname)
+    curr.remove();
+    Tasks2.pop();
+}
+
+}
+
+
 const AddButton = document.querySelector(".add");
 AddButton.addEventListener('click' , pop_it_up);
-
+const DeleteAll = document.querySelector(".trash");
+DeleteAll.addEventListener('click' , deleteAll);
+const DeleteAll2 = document.querySelector(".trash2");
+DeleteAll.addEventListener('click' , deleteAll2);

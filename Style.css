@@ -189,3 +189,17 @@ background-color:rgb(44, 146, 58);
 #Confirm:active{
     transform: scale(0.95);
 }
+#dConfirm{
+    background-color:rgb(226, 43, 43);
+    border-radius: 2px;
+    border: black solid;
+    margin-left: 5px;
+    height: 25px;
+    width: 27px;
+}
+#dConfirm:active{
+    transform: scale(0.95);
+}
+#dConfirm:hover{
+    background-color:rgb(183, 32, 32);
+}
