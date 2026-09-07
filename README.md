@@ -1,6 +1,6 @@
 # 📝 Interactive To-Do List Application
 
-A dynamic, light-weight web application that helps users organize daily tasks into active and completed categories. Built with modern vanilla JavaScript, HTML5, and CSS3.
+A dynamic, light-weight web application that helps users organize daily tasks into active and completed categories. Built with JavaScript, HTML5, and CSS3.
 
 ---
 
@@ -20,7 +20,7 @@ A dynamic, light-weight web application that helps users organize daily tasks in
 
 * **HTML5:** Semantic layout structure and custom inputs.
 * **CSS3:** Responsive styling and component layouts.
-* **JavaScript (ES6+):** Pure DOM manipulation, array management, and event-driven architecture.
+* **JavaScript :** Pure DOM manipulation, array management, and event-driven architecture.
 
 ---
 
