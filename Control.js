@@ -75,12 +75,6 @@ function AddTask(){
 
 }
 
-function updtask(event){
-const num = Number(event.target.id.slice(10));
-const idanme = "#task" + num;
-
-}
-
 function remtask (event){
 
 const num = Number(event.target.id.slice(10));
