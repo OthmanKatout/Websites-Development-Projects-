@@ -49,21 +49,45 @@ function AddTask(){
     Tasks1.push(new Task(strtext, false , cnt ));
     // call the function that render the new additions
        
-    TaskList.innerHTML +=
-     `<div class = "Task" id = "task${cnt}">
+    TaskList.insertAdjacentHTML('beforeend',
+    `<div id = "task${cnt}">
+    <div class = "Task"">
     <div>
     <input type = "checkbox" class = "Checkit${cnt}"><label class = "Label">${strtext}</label>
     </div>
     <div>
-    <span><button class = "updateName">🛠</button></span>
-    <span><button class = "deletetask">X</button></span>
+    <span><button class = "deletetask" id = "deletetas_${cnt}">X</button></span>
     </div>
     </div>
-    <br><br>`;
+    <br><br>
+    </div>`);
     const str = ".Checkit" + cnt;
     const checkbox = document.querySelector(str);
     checkbox.addEventListener('change' , toggleit);
+    const str2 = "#deletetas_" + cnt;
+    const removetask = document.querySelector(str2);
+    removetask.addEventListener('click' , remtask);
+
+    const str1 = "#deletetas_" + cnt;
+    const updttask = document.querySelector(str1);
+    updttask.addEventListener('click' , updtask);
     cnt ++; 
+
+}
+
+function updtask(event){
+const num = Number(event.target.id.slice(10));
+const idanme = "#task" + num;
+
+}
+
+function remtask (event){
+
+const num = Number(event.target.id.slice(10));
+const idanme = "#task" + num;
+
+const diiv = document.querySelector(idanme);
+diiv.remove();
 
 }
 
@@ -72,8 +96,6 @@ function toggleit (event){
 
 
 const num = Number(event.target.className.slice(7 , event.target.className.length));
-const str = "#task" + num;
-
 
 if(event.target.checked){
 
@@ -82,25 +104,33 @@ for(let i = 0 ; i < Tasks1.length ; i ++){
     Tasks1[i].done = true; 
     Tasks2.push(new Task (Tasks1[i].Name , Tasks1[i].done , Tasks1[i].N_O));
     const Second_List = document.querySelector("#Second_List");
-    Second_List.innerHTML += `<div class = "Task" id = "task${num}">
-    <div>
-    <input type = "checkbox" class = "Checkit${num}"><label class = "Label">${Tasks1[i].Name}</label>
-    </div>
-    <div>
-    <span><button class = "updateName">🛠</button></span>
-    <span><button class = "deletetask">X</button></span>
-    </div>
-    </div>
-    <br><br>`;
-    Tasks1.splice(i , 1);
     const str = "task" + num;
-    const why = document.querySelector(str);
+    const rem = document.querySelector("#" + str);
+    rem.remove();
+    Second_List.insertAdjacentHTML('beforeend' , `
+    <div id = "task${num}">
+    <div class = "Task">
+    <div>
+    <input type = "checkbox" class = "Checkit${num}" checked><label class = "Label">${Tasks1[i].Name}</label>
+    </div>
+    <div>
+    <span><button class = "deletetask" id = "deletetas_${num}">X</button></span>
+    </div>
+    </div>
+    <br><br>
+    </div>`);
+    Tasks1.splice(i , 1);
+    const str2 = ".Checkit" + num;
+    const why = document.querySelector(str2);
     why.addEventListener('change' , toggleit);
+    const str22 = "#deletetas_" + num;
+    const removetask = document.querySelector(str22);
+    removetask.addEventListener('click' , remtask);
     }
 }
 
 }
-else{
+else if(!event.target.checked){
 
 for(let i = 0 ; i < Tasks2.length ; i ++){
 
@@ -108,29 +138,32 @@ for(let i = 0 ; i < Tasks2.length ; i ++){
     Tasks2[i].done = false; 
     Tasks1.push(new Task (Tasks2[i].Name , Tasks2[i].done , Tasks2[i].N_O));
     const First_List = document.querySelector("#First_List");
-    First_List.innerHTML += `<div class = "Task" id = "task${num}">
+    const str = "task" + num;
+    const rem = document.querySelector("#" + str);   
+    rem.remove();
+    First_List.insertAdjacentHTML('beforeend',`
+    <div id = "task${num}">
+    <div class = "Task">
     <div>
     <input type = "checkbox" class = "Checkit${num}"><label class = "Label">${Tasks2[i].Name}</label>
     </div>
     <div>
-    <span><button class = "updateName">🛠</button></span>
-    <span><button class = "deletetask">X</button></span>
+    <span><button class = "deletetask" id = "deletetas_${num}">X</button></span>
     </div>
     </div>
-    <br><br>`;
+    <br><br>
+    </div>`);
     Tasks2.splice(i , 1);
-    const str = "task" + num;
-    const why = document.querySelector(str);
+    const str2 = ".Checkit" + num;
+    const why = document.querySelector(str2);
     why.addEventListener('change' , toggleit);
+    const str22 = "#deletetas_" + num;
+    const removetask = document.querySelector(str22);
+    removetask.addEventListener('click' , remtask);
     }
 }
 
 }
-
-
-const dl = document.querySelector(str);
-dl.remove();
-
 
 }
 
@@ -162,4 +195,4 @@ AddButton.addEventListener('click' , pop_it_up);
 const DeleteAll = document.querySelector(".trash");
 DeleteAll.addEventListener('click' , deleteAll);
 const DeleteAll2 = document.querySelector(".trash2");
-DeleteAll.addEventListener('click' , deleteAll2);
+DeleteAll2.addEventListener('click' , deleteAll2);
